@@ -1,0 +1,15 @@
+{
+  "cli": {
+    "version": ">= 0.38.3"
+  },
+  "build": {
+    "production": {
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "ios": {
+        "simulator": false
+      }
+    }
+  }
+}

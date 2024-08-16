@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "entryPoint": "./node_modules/expo-router/entry.js",
+    "name": "delicieux",
+    "slug": "delicieux",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.belqroz.delicieux",
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "hoge"
+        }
+      },
+      "scheme": "delicieux"
+    },
+    "android": {
+      "package": "com.belqroz.delicieux",
+      "scheme": "delicieux"
+    },
+    "icon": "./assets/icon.png",
+    "extra": {
+      "eas": {
+        "projectId": "hoge"
+      }
+    }
+  }
+}
