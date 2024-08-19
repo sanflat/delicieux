@@ -23,11 +23,7 @@ URL：HOGEHOGE
    ```
 
 *Note  
-Since you are using firebase, you will need to adapt the following files to your personal settings.
-
-- firebaseConfig.ts  
-- GoogleService-info.plist  
-- app.json  
+Although we are using stub data, we are programming it to be a quick and dynamic app by using firebase etc.
   
 ## Stack
 - React Native - ReactJS-based framework that can use native platform capabilities
