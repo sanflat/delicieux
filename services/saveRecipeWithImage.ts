@@ -4,7 +4,7 @@ import { Ingredient, Step } from '@/types/interface';
 import { saveRecipe } from "@/services/recipeService";
 
 /**
- * Firestoreに新規レシピの保存と、Storageに画像のアップロードを行います。
+ * 新規レシピの保存と、外部のStorageに画像のアップロードを行うスタブ
  * @param {string} userId 保存するレシピのユーザーID
  * @param {string} name 保存するレシピ名
  * @param {Ingredient[]} ingredients レシピの材料
@@ -43,7 +43,7 @@ export async function saveRecipeWithImage(
 }
 
 /**
- * 既存のFirestoreレシピ更新と、Storageに画像のアップロードを行います。
+ * 既存のレシピ更新と、外部のStorageに画像のアップロードを行うスタブ
  * @param {string} recipeId 更新するレシピのドキュメントID
  * @param {string} userId 保存するレシピのユーザーID
  * @param {string} name 保存するレシピ名
@@ -67,7 +67,6 @@ export async function updateRecipeWithImage(
     // まずレシピを更新
     await updateRecipe(recipeId, userId, name, ingredients, steps, memo);
 
-    console.log("recipeId2" + recipeId);
     let imageUri = null;
     if (image) {
       // 画像をアップロードし、URLを取得

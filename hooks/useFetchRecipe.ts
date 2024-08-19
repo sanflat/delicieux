@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { Recipe, User } from "@/types/interface";
+import { Recipe } from "@/types/interface";
 import { fetchRecipeByRecipeId } from "@/services/recipeService";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "@/firebaseConfig";
+import { fetchUserByUserId } from "@/services/userService";
 
 const useFetchRecipe = (recipeId: string) => {
   const [recipe, setRecipe] = useState<Recipe | null>(null);
@@ -21,10 +20,8 @@ const useFetchRecipe = (recipeId: string) => {
         if (recipeData) {
           setRecipe(recipeData);
           if (recipeData.userId) {
-            const userRef = doc(db, "users", recipeData.userId);
-            const userSnap = await getDoc(userRef);
-            if (userSnap.exists()) {
-              const userData = userSnap.data() as User;
+            const userData = await fetchUserByUserId(recipeData.userId);
+            if (userData) {
               setUserName(userData.userName);
             } else {
               console.log("ユーザーが見つかりませんでした。");
@@ -48,8 +45,6 @@ const useFetchRecipe = (recipeId: string) => {
     if (recipeId) {
       fetchRecipe();
     }
-
-    // 依存配列にrecipeIdを含めることで、IDが変更された際に再取得を行う
   }, [recipeId]);
 
   return { recipe, loading, error, userName };

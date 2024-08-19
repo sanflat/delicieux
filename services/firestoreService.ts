@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { db } from '../firebaseConfig';
+
 import { collection, deleteDoc, addDoc, doc, updateDoc, setDoc, getDoc, getDocs, query, where, onSnapshot } from 'firebase/firestore';
 import { Ingredient, Step } from '@/types/interface';
 
@@ -65,6 +65,15 @@ export const updateTaskSubjectInFirestore = async (taskId:string, newSubject:any
   }
 };
 
+/**
+ * レシピ情報を更新する非同期関数（スタブ）
+ * @param {string} id レシピのドキュメントID
+ * @param {string} userId ユーザーID
+ * @param {string} name レシピ名
+ * @param {Ingredient[]} ingredients 材料リスト
+ * @param {Step[]} steps 手順リスト
+ * @param {string} memo メモ
+ */
 export async function updateRecipe(
   id: string,
   userId: string,
@@ -73,29 +82,25 @@ export async function updateRecipe(
   steps: Step[],
   memo: string
 ): Promise<void> {
-  const recipeDocRef = doc(db, 'recipes', id);
-  await updateDoc(recipeDocRef, {
-    userId,
-    name,
-    ingredients,
-    steps,
-    memo,
-    updatedAt: new Date().toISOString(),
-  });
+  console.log('レシピを更新しました（スタブ）:', id, name);
 }
 
+/**
+ * レシピのメインイメージを更新する非同期関数（スタブ）
+ * @param {string} recipeId レシピのドキュメントID
+ * @param {string} imageUrl 新しいイメージのURL
+ */
 export async function updateRecipeMainImage(recipeId: string, imageUrl: string): Promise<void> {
-  const recipeDocRef = doc(db, 'recipes', recipeId);
-  await updateDoc(recipeDocRef, {
-    image: imageUrl,
-  });
+  console.log('レシピのメインイメージを更新しました（スタブ）:', recipeId, imageUrl);
 }
 
+/**
+ * レシピの手順を更新する非同期関数（スタブ）
+ * @param {string} recipeId レシピのドキュメントID
+ * @param {Step[]} steps 新しいレシピの手順
+ */
 export async function updateRecipeSteps(recipeId: string, steps: Step[]): Promise<void> {
-  const recipeDocRef = doc(db, 'recipes', recipeId);
-  await updateDoc(recipeDocRef, {
-    steps,
-  });
+  console.log('レシピの手順を更新しました（スタブ）:', recipeId, steps);
 }
 
 export async function saveUserGroup(groupId: string, userIds: string[]): Promise<void> {
