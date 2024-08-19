@@ -1,12 +1,15 @@
 # Welcome to Delicieux 👋
-It is a management app for delicious recipes.
+
+![Delicieux Thumbnail](https://github.com/sanflat/cabinet/blob/main/images/delicieux_thumbnail.png "Delicieux Thumbnail")
+
+A simple management app for delicious recipes.
 
 ![App Icon](https://github.com/sanflat/cabinet/blob/main/images/delisux.png "App Icon")
 
 
 # Delicieux description page
 
-URL：HOGEHOGE
+URL：[Yohei Kano Homepage - Delicieux](https://www.yohei-kano.com/projects/delicieux)
 
 ## Get started
 
